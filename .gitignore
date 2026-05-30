@@ -1,0 +1,70 @@
+# =============================================================================
+# .gitignore — SQL Server projects + Power BI dashboards
+# =============================================================================
+
+# ---------- SQL Server ----------
+# Database files (NEVER COMMIT)
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.bacpac
+*.trc
+
+# SSMS scratch
+*.tmp
+*.sqlsuo
+*.sqlproj.user
+*.dtproj.user
+
+# SSDT
+bin/
+obj/
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+# Generated SP / view scripts from comparisons (often contain server names)
+*compare*.sql
+*sync*.sql
+GenerateBuildScript.*
+
+# ---------- Power BI ----------
+# Local-only artifacts
+*.pbix.bak
+*.pbit.tmp
+.pbi/
+__pycache__/
+
+# Power BI Desktop autosave
+*.pbiautosave/
+
+# Don't ignore the pbix itself — it's the artifact you ship.
+# BUT — make sure it's tracked with LFS:
+#   git lfs track "*.pbix"
+#   git lfs track "*.pbit"
+
+# ---------- Tabular / SSAS ----------
+*.bim.tmp
+*.asdatabase
+*.deploymentoptions
+*.deploymenttargets
+
+# ---------- General ----------
+.env
+.env.*
+!.env.example
+secrets.json
+connectionstrings.json
+*.pfx
+*.pem
+*.key
+
+# Editor / OS
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+.DS_Store
